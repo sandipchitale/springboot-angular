@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <p-toolbar>
+    <div class="p-toolbar-group-left" style="flex: 1 1 auto">
+      <button pButton icon="pi pi-bars" class="p-button-primary"></button>
+    </div>
+    <div class="p-toolbar-group-right" style="flex: 0 0 auto">
+      <p-toggleButton
+        [(ngModel)]="lightTheme"
+        [onIcon]="'pi pi-sun'"
+        [offIcon]="'pi pi-moon'"
+        class="ml-auto"
+        (onChange)="adjustTheme($event)"></p-toggleButton>
+    </div>
+  </p-toolbar>
+  <main>
+    <p-tabView>
+      <p-tabPanel header="Springboot">
+        <a href="https://spring.io/projects/spring-boot" target="_blank">Springboot</a>
+      </p-tabPanel>
+      <p-tabPanel header="Angular">
+        <a href="https://angular.io/" target="_blank">Angular</a>
+      </p-tabPanel>
+      <p-tabPanel header="PrimeNG">
+        <a href="https://primeng.org/" target="_blank">PrimeNG</a>
+      </p-tabPanel>
+    </p-tabView>
+  </main>
+</div>
