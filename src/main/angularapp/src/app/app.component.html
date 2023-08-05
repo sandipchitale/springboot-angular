@@ -16,6 +16,18 @@
     <p-tabView>
       <p-tabPanel header="Springboot">
         <a href="https://spring.io/projects/spring-boot" target="_blank">Springboot</a>
+        <p-tabView>
+          <p-tabPanel header="Bean Definition Names">
+            <ng-container *ngFor="let beanDefinitionName of beanDefinitionNames">
+              <div>{{beanDefinitionName}}</div>
+            </ng-container>
+          </p-tabPanel>
+          <p-tabPanel header="Configuration Properties">
+            <ng-container *ngFor="let configurationProperty of configurationProperties">
+              <div>{{configurationProperty}}</div>
+            </ng-container>
+          </p-tabPanel>
+        </p-tabView>
       </p-tabPanel>
       <p-tabPanel header="Angular">
         <a href="https://angular.io/" target="_blank">Angular</a>

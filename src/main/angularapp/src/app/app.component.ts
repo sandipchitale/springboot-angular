@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import {AppService} from "./app.service";
 
 @Component({
   selector: 'app-root',
@@ -9,13 +10,18 @@ import { DOCUMENT } from '@angular/common';
 export class AppComponent implements OnInit, AfterViewInit {
   lightTheme = true;
 
-  springbootAppUrl = 'http://localhost:8080/actuator';
+  beanDefinitionNames: string[] = [];
+  configurationProperties: string[] = [];
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
-  }
+  constructor(@Inject(DOCUMENT) private document: Document, private apiService: AppService) {}
 
   ngOnInit(): void {
-
+    this.apiService.beandefinitionnames().subscribe((beanDefinitionNames: string[]) => {
+      this.beanDefinitionNames = beanDefinitionNames;
+    });
+    this.apiService.configurationProperties().subscribe((configurationProperties: string[]) => {
+      this.configurationProperties = configurationProperties;
+    });
   }
 
   ngAfterViewInit(): void {

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 // import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonModule } from 'primeng/button';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -28,6 +30,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { SplitButtonModule } from 'primeng/splitbutton';
 
 import { AppComponent } from './app.component';
+import { AppService } from "./app.service";
 
 @NgModule({
   declarations: [AppComponent],
@@ -55,8 +58,10 @@ import { AppComponent } from './app.component';
     // TooltipModule,
     // TreeTableModule
     // SplitButtonModule,
+    HttpClientModule,
   ],
   providers: [
+    AppService
   ],
   bootstrap: [AppComponent],
 })
