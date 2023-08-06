@@ -2,7 +2,6 @@ package sandipchitale.springbootangular;
 
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.properties.ConfigurationPropertiesBean;
@@ -49,7 +48,4 @@ public class SpringbootAngularApplication  extends SpringBootServletInitializer 
 			return ConfigurationPropertiesBean.getAll(applicationContext).keySet().toArray(new String[0]);
 	    }
 	}
-
-
-
 }
