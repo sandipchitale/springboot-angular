@@ -43,7 +43,7 @@ tasks.register('gradleNgBuild', NpmTask) {
 	args = ['run', 'gradle-build']
 
 	inputs.dir file("${project.projectDir}/src/main/angularapp")
-	outputs.dir file("${project.projectDir}/build/resources/main/static/app")
+	outputs.dir file("${project.projectDir}/build/resources/main/static")
 }
 
 tasks.named('classes').configure {

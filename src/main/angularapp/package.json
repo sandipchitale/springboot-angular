@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "gradle-build": "ng build --base-href=/app/ --output-path=../../../build/resources/main/static/app",
+    "gradle-build": "ng build --output-path=../../../build/resources/main/static",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

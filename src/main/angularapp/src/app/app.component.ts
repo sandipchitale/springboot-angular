@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import {AppService} from "./app.service";
+import {AppService} from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   constructor(@Inject(DOCUMENT) private document: Document, private apiService: AppService) {}
 
   ngOnInit(): void {
-    this.apiService.beandefinitionnames().subscribe((beanDefinitionNames: string[]) => {
+    this.apiService.beanDefinitionNames().subscribe((beanDefinitionNames: string[]) => {
       this.beanDefinitionNames = beanDefinitionNames;
     });
     this.apiService.configurationProperties().subscribe((configurationProperties: string[]) => {
