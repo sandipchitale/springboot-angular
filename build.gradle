@@ -41,7 +41,7 @@ dependencies {
 }
 
 tasks.register('gradleNgBuild', NpmTask) {
-	group 'frontend-build'
+	group 'angularapp build'
 	description 'Builds the Angular app using ng build'
 
 	dependsOn npmInstall
