@@ -1,7 +1,8 @@
 <div class="wrapper">
   <p-toolbar>
     <div class="p-toolbar-group-left" style="flex: 1 1 auto">
-      <button pButton icon="pi pi-bars" class="p-button-primary"></button>
+      <button pButton class="p-button-primary mr-2"><i class="pi pi-bars"></i></button>
+      Springboot | Angular | PrimeNG | TailwindCSS
     </div>
     <div class="p-toolbar-group-right" style="flex: 0 0 auto">
       <p-toggleButton
@@ -13,28 +14,35 @@
     </div>
   </p-toolbar>
   <main>
-    <p-tabView>
-      <p-tabPanel header="Springboot">
-        <a href="https://spring.io/projects/spring-boot" target="_blank">Springboot</a>
-        <p-tabView>
-          <p-tabPanel header="Bean Definition Names">
-            <ng-container *ngFor="let beanDefinitionName of beanDefinitionNames">
-              <div>{{beanDefinitionName}}</div>
-            </ng-container>
-          </p-tabPanel>
-          <p-tabPanel header="Configuration Properties">
-            <ng-container *ngFor="let configurationProperty of configurationProperties">
-              <div>{{configurationProperty}}</div>
-            </ng-container>
-          </p-tabPanel>
-        </p-tabView>
-      </p-tabPanel>
-      <p-tabPanel header="Angular">
-        <a href="https://angular.io/" target="_blank">Angular</a>
-      </p-tabPanel>
-      <p-tabPanel header="PrimeNG">
-        <a href="https://primeng.org/" target="_blank">PrimeNG</a>
-      </p-tabPanel>
-    </p-tabView>
+    <p-tabs value="0">
+      <p-tablist>
+        <p-tab value="0">Springboot</p-tab>
+        <p-tab value="1">Angular</p-tab>
+        <p-tab value="2">PrimeNG</p-tab>
+        <p-tab value="3">TailwindCSS</p-tab>
+      </p-tablist>
+      <p-tabpanels>
+        <p-tabpanel value="0">
+          <p class="m-0">
+            <a class="hover:underline" href="https://docs.spring.io/spring-boot/index.html">Spring Boot 3.4.0</a>
+          </p>
+        </p-tabpanel>
+        <p-tabpanel value="1">
+          <p class="m-0">
+            <a class="hover:underline" href="https://v18.angular.dev/">Angular 18</a>
+          </p>
+        </p-tabpanel>
+        <p-tabpanel value="2">
+          <p class="m-0">
+            <a class="hover:underline" href="https://v18.primeng.org/">PrimeNG 18</a>
+          </p>
+        </p-tabpanel>
+        <p-tabpanel value="3">
+          <p class="m-0">
+            <a class="hover:underline" href="https://tailwindcss.com/">TailwindCSS</a>
+          </p>
+        </p-tabpanel>
+      </p-tabpanels>
+    </p-tabs>
   </main>
 </div>

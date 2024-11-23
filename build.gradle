@@ -1,10 +1,10 @@
 plugins {
 	id 'java'
 	id 'war'
-	id 'org.springframework.boot' version '3.1.2'
-	id 'io.spring.dependency-management' version '1.1.2'
+	id 'org.springframework.boot' version '3.4.0'
+	id 'io.spring.dependency-management' version '1.1.6'
 
-	id 'com.github.node-gradle.node' version '5.0.0'
+	id 'com.github.node-gradle.node' version '7.1.0'
 }
 
 group = 'sandipchitale'
@@ -12,7 +12,7 @@ version = '0.0.1-SNAPSHOT'
 
 node {
 	download = true
-	version = '18.17.0'
+	version = '22.11.0'
 	npmVersion = ''
 
 	distBaseUrl = 'https://nodejs.org/dist'
@@ -45,7 +45,7 @@ tasks.register('gradleNgBuild', NpmTask) {
 	description 'Builds the Angular app using ng build'
 
 	dependsOn npmInstall
-	args = ['run', 'gradle-build']
+	args = ['run', 'build']
 
 	inputs.dir file("${project.projectDir}/src/main/angularapp")
 	outputs.dir file("${project.projectDir}/build/resources/main/static")

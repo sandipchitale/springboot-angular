@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 import {HttpClient, HttpErrorResponse,} from '@angular/common/http';
@@ -7,7 +7,7 @@ import {HttpClient, HttpErrorResponse,} from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppService {
-  constructor(private http: HttpClient) {}
+  constructor(@Inject(HttpClient) private http: HttpClient) {}
 
   public beanDefinitionNames(): Observable<string[]> {
     return this.http.get<string[]>(`beandefinitionnames`).pipe(catchError(this.error));
