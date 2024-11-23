@@ -9,6 +9,8 @@
         [(ngModel)]="lightTheme"
         [onIcon]="'pi pi-sun'"
         [offIcon]="'pi pi-moon'"
+        [onLabel]="'Light'"
+        [offLabel]="'Dark'"
         class="ml-auto"
         (onChange)="adjustTheme($event)"></p-toggleButton>
     </div>
@@ -26,6 +28,24 @@
           <p class="m-0">
             <a class="hover:underline" href="https://docs.spring.io/spring-boot/index.html">Spring Boot 3.4.0</a>
           </p>
+          <p-tabs value="0">
+            <p-tablist>
+              <p-tab value="0">Bean Definition Names</p-tab>
+              <p-tab value="1">Configuration Properties</p-tab>
+            </p-tablist>
+            <p-tabpanels>
+              <p-tabpanel value="0">
+                @for ( beanDefinitionName of beanDefinitionNames ; track beanDefinitionName) {
+                  <div>{{ beanDefinitionName }}</div>
+                }
+              </p-tabpanel>
+              <p-tabpanel value="1">
+                @for (configurationProperty of configurationProperties; track configurationProperty) {
+                  <div>{{ configurationProperty }}</div>
+                }
+              </p-tabpanel>
+            </p-tabpanels>
+          </p-tabs>
         </p-tabpanel>
         <p-tabpanel value="1">
           <p class="m-0">
