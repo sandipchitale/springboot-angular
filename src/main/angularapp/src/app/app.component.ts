@@ -29,6 +29,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    console.log(window.matchMedia('(prefers-color-scheme: light)').matches);
+    this.lightTheme = window.matchMedia('(prefers-color-scheme: light)').matches;
+
     this.apiService.beanDefinitionNames().subscribe((beanDefinitionNames: string[]) => {
       this.beanDefinitionNames = beanDefinitionNames;
     });
@@ -38,7 +41,11 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.computeTheme();
+    if (this.lightTheme) {
+      this.document.querySelector('html')?.classList.remove('dark-theme')
+    } else {
+      this.document.querySelector('html')?.classList.add('dark-theme')
+    }
   }
 
   computeTheme(): void {
