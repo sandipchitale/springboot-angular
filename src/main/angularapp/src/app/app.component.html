@@ -9,10 +9,10 @@
         [(ngModel)]="lightTheme"
         [onIcon]="'pi pi-sun'"
         [offIcon]="'pi pi-moon'"
-        [onLabel]="'Light'"
-        [offLabel]="'Dark'"
+        [onLabel]="'Dark'"
+        [offLabel]="'Light'"
         class="ml-auto"
-        (onChange)="adjustTheme($event)"></p-toggleButton>
+        (onChange)="toggleTheme($event)"></p-toggleButton>
     </div>
   </p-toolbar>
   <main>

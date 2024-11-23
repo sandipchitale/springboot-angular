@@ -18,7 +18,7 @@ import {AppService} from './app.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   lightTheme = true;
 
   beanDefinitionNames: string[] = [];
@@ -37,11 +37,16 @@ export class AppComponent implements OnInit {
     });
   }
 
-  adjustTheme(event?: any) {
-    if (this.document.body.classList.contains('dark-theme')) {
-      this.document.body.classList.remove('dark-theme');
-    } else {
-      this.document.body.classList.add('dark-theme');
-    }
+  ngAfterViewInit(): void {
+    this.computeTheme();
+  }
+
+  computeTheme(): void {
+    this.lightTheme = !this.document.querySelector('html')?.classList.contains('dark-theme');
+  }
+
+  toggleTheme(event?: any) {
+    this.document.querySelector('html')?.classList.toggle('dark-theme');
+    this.computeTheme();
   }
 }
